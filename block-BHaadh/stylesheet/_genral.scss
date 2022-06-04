@@ -1,0 +1,137 @@
+body {
+    background-color: black;
+  }
+  
+  .outer-box {
+    border: 1px solid #ffffff;
+    flex: 0 1 50%;
+    margin-top: 3rem;
+    h1 {
+      color: #ec5454;
+      margin: 2rem auto;
+    }
+  }
+  
+  /* 2D Cube*/
+  .inner-box1 {
+    width: 100%;
+    height: 75vh;
+    &:hover {
+      animation: spin 5s linear infinite;
+      cursor: pointer;
+    }
+  
+    .cube-2d {
+      left: 40%;
+      top: 10rem;
+      position: relative;
+  
+      .side {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+      }
+      .top {
+        background: #da4925dd;
+        transform: rotate(-45deg) skew(15deg, 15deg);
+      }
+      .left {
+        background: #c5241fcc;
+        transform: rotate(15deg) skew(15deg, 15deg) translate(-50%, 100%);
+      }
+      .right {
+        background: #c0270cee;
+        transform: rotate(-15deg) skew(-15deg, -15deg) translate(50%, 100%);
+      }
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  /* 3D Cube */
+  
+  .inner-box2 {
+    width: 100%;
+    height: 75vh;
+    transition-property: transform;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover .cube {
+      transform: translateZ(-100px) rotateY(90deg);
+      transition: transform 1s;
+    }
+  
+    .face-front {
+      background-color: rgba($red, 0.7);
+    }
+    .face-back {
+      background-color: rgba($green, 0.7);
+    }
+    .face-right {
+      background-color: rgba($yellow, 0.7);
+    }
+    .face-left {
+      background-color: rgba($skyblue, 0.7);
+    }
+    .face-top {
+      background-color: rgba($blue, 0.7);
+    }
+    .face-bottom {
+      background-color: rgba($pink, 0.7);
+    }
+  
+    .scene {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      padding-top: 10rem;
+      perspective: 600px;
+    }
+  
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+  
+    .face {
+      font-size: 2rem;
+      color: #ffffff;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+    }
+    // Aligning all faces
+  
+    .face-front {
+      transform: rotateY(0deg) translateZ(100px);
+    }
+    .face-right {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    .face-back {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+    .face-left {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+    .face-top {
+      transform: rotateX(90deg) translateZ(100px);
+    }
+    .face-bottom {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+  }
