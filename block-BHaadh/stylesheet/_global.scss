@@ -1,0 +1,52 @@
+/*Global*/
+html {
+    font-size: 18px;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    max-width: 1680px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Headings */
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  
+  
+  /* Flex*/
+  .flex {
+      display: flex;
+  }
+  
+  .justify-between{
+      justify-content: space-between;
+  }
+  
+  .align-center{
+      align-items: center;
+  }
